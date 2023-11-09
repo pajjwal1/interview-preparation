@@ -17,6 +17,10 @@ import DropDowns from "./component/DropDowns";
 import SearchBar from "./component/SearchBar";
 import Routing from "./component/react-routing/Routing";
 import TestCompany from './component/TestCompany';
+import RandomCode from "./component/RandomCode";
+import ReduxToolkitExample from "./component/Redux-Toolkit/ReduxToolkitExample";
+import MainComponent from "./component/redux-saga/MainComponent";
+import Deck from './component/Deck/Deck'
 
 const name = createContext();
 function App() {
@@ -41,7 +45,11 @@ function App() {
       {/* <DropDowns /> */}
       {/* <SearchBar /> */}
       {/* <Routing /> */}
-      <TestCompany />
+      {/* <TestCompany /> */}
+      {/* <RandomCode /> */}
+      {/* <ReduxToolkitExample /> */}
+      {/* <MainComponent /> */}
+      <Deck />
     </>
   );
 }

@@ -1,0 +1,31 @@
+{
+    "product":[
+        {
+            "id":1,
+            "name":"Product 1",
+            "price":50.98,
+            "color":"black",
+            "category":"mobile",
+            "brand":"samsung",
+            "photo":"https://i5.walmartimages.com/asr/7fe14e55-dfad-4215-9251-be91dee24542.fb44fb0c013c276fa4010a75f0244660.jpeg"
+        },
+        {
+            "id":2,
+            "name":"Product 2",
+            "price":60.98,
+            "color":"blue",
+            "category":"watch",
+            "brand":"samsung",
+            "photo":"https://th.bing.com/th/id/OIP.HbS0yVl5mDCi7986Lt8bTwHaHa?pid=ImgDet&rs=1"
+        },
+        {
+            "id":3,
+            "name":"Product 3",
+            "price":70.98,
+            "color":"red",
+            "category":"laptop",
+            "brand":"apple",
+            "photo":"https://th.bing.com/th/id/OIP.dlv82Fht78SjRGiRJhJn6QHaJ4?pid=ImgDet&rs=1"
+        }
+    ]
+}

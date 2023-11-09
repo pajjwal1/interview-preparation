@@ -1,0 +1,22 @@
+.Deck {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.DeckCards {
+  text-align: center;
+}
+button {
+  display: flex;
+  margin: 10px 10px;
+  background-color:   #0b8b8b;  
+  border-radius: 6px;
+  border: 2px solid black;
+  cursor: pointer;
+  color: #0b0505; 
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 15px;
+}

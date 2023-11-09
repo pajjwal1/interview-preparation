@@ -1,63 +1,55 @@
 import React, { useState } from 'react';
 
 const TodoList = () => {
-  const [data, setData] = useState('');
-  const [displayData, setDisplayData] = useState([]);
-  const [editData, setEditData] = useState(0);
-
-  const handleClick = () => {
-    if (editData !== 0) {
-      const updatedData = displayData.map((element, id) =>
-        id === editData ? data : element
-      );
-      setDisplayData(updatedData);
-      setEditData(0);
-      setData('');
+  const [inputData, setInputData] = useState("");
+  const [todoData, setTodoData] = useState([]);
+  const [updateIndex, setUpdateIndex] = useState(0);
+  const handleSubmit = () => {
+    if (updateIndex !== 0) {
+      const result = todoData.map((value, id) => {
+        return id === updateIndex ? inputData : value;
+      });
+      setTodoData(result);
+      setUpdateIndex(0);
+      setInputData("");
     } else {
-      setDisplayData([...displayData, data]);
-      setData('');
+      setTodoData([...todoData, inputData]);
+      setInputData("");
     }
   };
-
-  const handleDelete = (id) => {
-    const updatedData = displayData.filter((_, ids) => ids !== id);
-    setDisplayData(updatedData);
+  const handleDelete = (index) => {
+    const newResultAfterDelete = todoData.filter((_, id) => id !== index);
+    setTodoData(newResultAfterDelete);
   };
-
-  const handleUpdate = (id) => {
-    const editTodo = displayData.find((_, ids) => ids === id);
-    setData(editTodo);
-    setEditData(id);
+  const handleUpdate = (index) => {
+    const findClickedData = todoData.find((_, id) => id === index);
+    setInputData(findClickedData);
+    setUpdateIndex(index);
   };
 
   return (
     <div>
       <input
         type="text"
-        placeholder="todos"
-        value={data}
-        onChange={(e) => setData(e.target.value)}
+        placeholder="add todos......"
+        value={inputData}
+        onChange={(e) => setInputData(e.target.value)}
       />
-      <button type="button" onClick={handleClick}>
-        {editData !== 0 ? 'Update' : 'Submit'}
+      <button type="submit" onClick={handleSubmit}>
+        Send
       </button>
-
-      <div>
-        <h2>Display todo list</h2>
-        <ul>
-          {displayData.map((element, id) => (
-            <div key={id}>
-              <li>{element}</li>
-              <button type="button" onClick={() => handleDelete(id)}>
-                Delete
-              </button>
-              <button type="button" onClick={() => handleUpdate(id)}>
-                Update
-              </button>
+      <h3>TodoList</h3>
+      <ul>
+        {todoData.map((value, index) => {
+          return (
+            <div key={index}>
+              <li>{value}</li>
+              <button onClick={() => handleDelete(index)}>Delete</button>
+              <button onClick={() => handleUpdate(index)}>Update</button>
             </div>
-          ))}
-        </ul>
-      </div>
+          );
+        })}
+      </ul>
     </div>
   );
 };
