@@ -21,6 +21,7 @@ import RandomCode from "./component/RandomCode";
 import ReduxToolkitExample from "./component/Redux-Toolkit/ReduxToolkitExample";
 import MainComponent from "./component/redux-saga/MainComponent";
 import Deck from './component/Deck/Deck'
+import Calculator from "./component/Calculator/Calculator";
 
 const name = createContext();
 function App() {
@@ -49,7 +50,8 @@ function App() {
       {/* <RandomCode /> */}
       {/* <ReduxToolkitExample /> */}
       {/* <MainComponent /> */}
-      <Deck />
+      {/* <Deck /> */}
+      <Calculator />
     </>
   );
 }
